@@ -1,0 +1,48 @@
+/* Styles for the checkbox container */
+.checkbox-container {
+  display: inline-block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Hide the default checkbox input */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Style for the custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #fff;
+  border: 2px solid #2196F3;
+  border-radius: 5px;
+}
+
+/* Animation for the checkmark when checkbox is checked */
+.checkbox-container input:checked ~ .checkmark {
+  animation: checkboxAnimation 0.5s ease-in-out forwards;
+}
+
+@keyframes checkboxAnimation {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
